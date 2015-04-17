@@ -33,6 +33,10 @@ TESTS = run_tests.sh tst_64bit.sh ctest ctest64 tst_output.sh	\
 tst_lengths.sh tst_calendars.sh tst_utf8 run_utf8_tests.sh      \
 tst_nccopy3.sh tst_charfill.sh tst_iter.sh tst_formatx3.sh tst_bom.sh
 
+if BUILD_DISKLESS
+TESTS += tst_inmemory.sh
+endif
+
 if LARGE_FILE_TESTS
 TESTS += tst_iter.sh
 endif
@@ -128,7 +132,7 @@ tst_iter.sh tst_mud.sh ref_tst_mud4.cdl ref_tst_mud4-bc.cdl             \
 ref_tst_mud4_chars.cdl \
 ref_tst_ncf213.cdl tst_h_scalar.sh                                      \
 tst_formatx3.sh tst_formatx4.sh                                         \
-CMakeLists.txt XGetopt.c tst_bom.sh
+CMakeLists.txt XGetopt.c tst_bom.sh tst_inmemory.sh
 
 # CDL files and Expected results
 SUBDIRS=cdl expected
