@@ -110,6 +110,10 @@ memio_new(const char* path, int ioflags, off_t initialsize, void* memory, ncio**
     assert(memiop != NULL && nciopp != NULL);
     assert(path != NULL || (memory != NULL && initialsize > 0));
 
+    /* use asserts because this is an internal function */
+    assert(memiop != NULL && nciopp != NULL);
+    assert(path != NULL || (memory != NULL && initialsize > 0));
+
     if(pagesize == 0) {
 
 #if defined (_WIN32) || defined(_WIN64)
